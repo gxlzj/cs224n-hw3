@@ -1,0 +1,286 @@
+% This is a LaTeX Template for course assignment designed by Hao Yin on March 9th, 2015.
+% If you want to modify this template, go to Library  -->  Texshop  -->  Template  -->  ...
+
+\documentclass[11pt, oneside]{article}      % use "amsart" instead of "article" for AMSLaTeX format
+%\usepackage{geometry}                      % See geometry.pdf to learn the layout options. There are lots.
+\usepackage[text={7in,9in},centering]{geometry}
+\geometry{letterpaper}                          % ... or a4paper or a5paper or ...
+%\geometry{landscape}                       % Activate for for rotated page geometry
+%\usepackage[parfill]{parskip}          % Activate to begin paragraphs with an empty line rather than an indent
+
+\usepackage{amsmath, amssymb, color}
+%\usepackage{amsthm}
+\usepackage{hyperref, url}
+\usepackage{graphicx}               % Use pdf, png, jpg, or eps§ with pdflatex; use eps in DVI mode. TeX will automatically convert eps --> pdf in pdflatex
+
+
+
+\usepackage{natbib} % This part is for bibliography.
+ \bibpunct[, ]{(}{)}{,}{a}{}{,}%
+ \def\bibfont{\small}%
+ \def\bibsep{\smallskipamount}%
+ \def\bibhang{24pt}%
+ \def\newblock{\ }%
+ \def\BIBand{and}%
+
+% New environment part
+\newtheorem{definition}{Definition}
+\newtheorem{assumption}{Assumption}
+\newtheorem{fact}{Fact}
+\newtheorem{theorem}{Theorem}%[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{remark}{Remark}
+\newtheorem{example}{Example}
+% Need the environment Proof ? Please use the following:
+% {\noindent\bf Proof.}  ...........................  $\hfill \square$\\
+
+% Bold type part.
+\newcommand{\ba}{\mbox{\boldmath $a$}}
+\newcommand{\bb}{\mbox{\boldmath $b$}}
+\newcommand{\bc}{\mbox{\boldmath $c$}}
+\newcommand{\bd}{\mbox{\boldmath $d$}}
+\newcommand{\be}{\mbox{\boldmath $e$}}
+\newcommand{\bff}{\mbox{\boldmath $f$}} %NOTICE!
+\newcommand{\bg}{\mbox{\boldmath $g$}}
+\newcommand{\bh}{\mbox{\boldmath $h$}}
+\newcommand{\bo}{\mbox{\boldmath $o$}}
+\newcommand{\bp}{\mbox{\boldmath $p$}}
+\newcommand{\bq}{\mbox{\boldmath $q$}}
+\newcommand{\br}{\mbox{\boldmath $r$}}
+\newcommand{\bs}{\mbox{\boldmath $s$}}
+\newcommand{\bt}{\mbox{\boldmath $t$}}
+\newcommand{\bu}{\mbox{\boldmath $u$}}
+\newcommand{\bv}{\mbox{\boldmath $v$}}
+\newcommand{\bw}{\mbox{\boldmath $w$}}
+\newcommand{\bx}{\mbox{\boldmath $x$}}
+\newcommand{\by}{\mbox{\boldmath $y$}}
+\newcommand{\bz}{\mbox{\boldmath $z$}}
+\newcommand{\bzero}{\mbox
+%{\Large 
+{\boldmath $0$}}
+%}
+
+\newcommand{\bA}{\mbox{\boldmath $A$}}
+\newcommand{\bB}{\mbox{\boldmath $B$}}
+\newcommand{\bC}{\mbox{\boldmath $C$}}
+\newcommand{\bD}{\mbox{\boldmath $D$}}
+\newcommand{\bI}{\mbox{\boldmath $I$}}
+\newcommand{\bM}{\mbox{\boldmath $M$}}
+\newcommand{\bU}{\mbox{\boldmath $U$}}
+\newcommand{\bV}{\mbox{\boldmath $V$}}
+\newcommand{\bW}{\mbox{\boldmath $W$}}
+\newcommand{\bX}{\mbox{\boldmath $X$}}
+\newcommand{\bY}{\mbox{\boldmath $Y$}}
+\newcommand{\bZ}{\mbox{\boldmath $Z$}}
+
+\newcommand{\balpha}{\mbox{\boldmath $\alpha$}}
+\newcommand{\bbeta}{\mbox{\boldmath $\beta$}}
+\newcommand{\btheta}{\mbox{\boldmath $\theta$}}
+\newcommand{\bgamma}{\mbox{\boldmath $\gamma$}}
+\newcommand{\bdelta}{\mbox{\boldmath $\delta$}}
+\newcommand{\bmu}{\mbox{\boldmath $\mu$}}
+\newcommand{\bepsilon}{\mbox{\boldmath $\epsilon$}}
+\newcommand{\blambda}{\mbox{\boldmath $\lambda$}}
+\newcommand{\btau}{\mbox{\boldmath $\tau$}}
+\newcommand{\bsigma}{\mbox{\boldmath $\sigma$}}
+\newcommand{\bSigma}{\mbox{\boldmath $\Sigma$}}
+
+% Specific math notation:
+\newcommand{\real}[1]{\mbox{$\mathbb{R}^{#1}$}}
+\newcommand{\prob}{\mbox{$\mathbb{P}$}}
+\newcommand{\expect}{\mbox{$\mathbb{E}$}}
+\newcommand{\var}{\mbox{$\mathbb{V}$}}
+\newcommand{\compl}[1]{\mbox{$\mathbb{C}^{#1}$}}
+\newcommand{\realN}[1]{\mbox{$\real{I_1 \times I_2 \times \dots \times I_{#1}}$}}
+\newcommand{\complN}[1]{\mbox{$\compl{I_1 \times I_2 \times \dots \times I_{#1}}$}}
+%\newcommand{\natural}{\mbox{$\mathbb{N}$}}
+
+% Enumerate part
+\newcommand{\V}[1]{\mbox{\boldmath $#1$}}
+\newcommand{\RV}[1]{\mbox{\boldmath $\tilde{#1}$}}
+\newcommand{\rv}[1]{\tilde{#1}}
+\newcommand{\OPT}{{\mbox{OPT}}}
+\newcommand{\SP}{{\tt{SP}}}
+\newcommand{\CVX}{{\tt{CVX}}}
+\newcommand{\LP}{{\tt{LP}}}
+\newcommand{\D}{{\tt{D}}}
+\newcommand{\ALG}{\tt{ALG}}
+\newcommand{\cT}{{\cal T}}
+
+%Added on Feb 23, 2015: Roman numbers, chapters, DEFINE format
+\newcommand{\rmnum}[1]{\romannumeral #1} % Roman small letter
+\newcommand{\Rmnum}[1]{\uppercase\expandafter{\romannumeral #1}} % Roman capital letter
+\usepackage[raggedright]{titlesec}% 可换为 raggedleft  raggedright
+\titleformat{\chapter}{\centering\Huge\bfseries}{Chapter \Rmnum{\thechapter} }{1em}{} % in book format
+\newcommand{\df}{\bfseries \em}  % DEFINE format for text
+
+%Added on April 30th, 2015: 
+\usepackage{mathrsfs} %math-script format, then use \mathscr{F} 
+\usepackage{enumerate} % change the symbols in enumerate
+\graphicspath{{figures/}}  %图片路径
+
+%Added on Jul 11th, 2015:
+\newcommand{\tensorA}{\mbox{\boldmath $\mathcal{A}$}}
+\newcommand{\tensorD}{\mbox{\boldmath $\mathcal{D}$}}
+\newcommand{\tensorE}{\mbox{\boldmath $\mathcal{E}$}}
+\newcommand{\tensorF}{\mbox{\boldmath $\mathcal{F}$}}
+\newcommand{\tensorG}{\mbox{\boldmath $\mathcal{G}$}}
+\newcommand{\tensorI}{\mbox{\boldmath $\mathcal{I}$}}
+\newcommand{\tensorU}{\mbox{\boldmath $\mathcal{U}$}}
+\newcommand{\tensorV}{\mbox{\boldmath $\mathcal{V}$}}
+\newcommand{\tensorX}{\mbox{\boldmath $\mathcal{X}$}}
+\newcommand{\tensorY}{\mbox{\boldmath $\mathcal{Y}$}}
+\usepackage{multirow}
+\usepackage{amsmath} 
+\usepackage{stmaryrd}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{xcolor} 
+\DeclareMathOperator*{\argmin}{argmin}
+
+\usepackage{color}
+\newcommand{\tbw}{\bigskip \mbox{\color{red} {\df (TBW) }}\bigskip}
+
+%\newcommand{\hasPageBreak}{\newpage}
+\newcommand{\hasPageBreak}{}
+
+
+% Added on Dec 8th, 2015: listings
+\usepackage{listings}
+
+% Added on March 9th, 2016: algorithm
+\usepackage{algorithm} 
+\usepackage{algorithmic}
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+\renewcommand{\algorithmicensure}{\textbf{Output:}}
+
+\begin{document}
+\title{Answer to CS224n Assignment 3}
+\author{
+Pengfei Gao, Fanny Yang, Hao Yin 
+\thanks{\texttt{\{Pengfei.Gao, fanfyang, yinh\}@stanford.edu}. 
+Each member contributes equally, and names are put in alphabetic order.} 
+}
+\date{}
+\maketitle
+
+\section*{Problem 1}
+\begin{enumerate}   [(a)]
+%\setcounter{enumi}{3}
+\item \tbw
+\begin{enumerate}   [i]
+%\setcounter{enumi}{3}
+\item 
+J.P. Morgan could either be a PERor a ORG ; Stanford can either be a ORG or be a PER.
+
+\item
+Because sometimes we need contexts. For example, if you say George Stanford is a great man. Then Stanford is a PER. If you say Stanford University, then Stanford is a ORG.
+
+\item 
+The first letter of that word is capital or not; There is no 'a','the' in front of that word
+
+\end{enumerate}
+
+
+\hasPageBreak
+\item
+\begin{enumerate}   [i]
+%\setcounter{enumi}{3}
+\item 
+$\be \in \real{1 \times (2 w + 1) D}$, $W \in \real{(2 w + 1)D \times H}$, $U \in \real{H \times C}$.
+
+
+\item For each time step, forming $\be$ takes $O((2 w + 1) D)$, computing $\bh$ takes $O((2 w + 1)DH)$, then computing $\hat \by$ takes $O(HC)$. Therefore, for each time step, the total time for predicting label complexity is $O(H((2 w + 1)D + C))$. Now for a sentence of length $T$, the total time complexity is 
+\[O(HT((2 w + 1)D + C)).\]
+
+\end{enumerate}
+
+
+
+
+\hasPageBreak
+\item
+Finished! Need to compare with Junzi.
+
+
+
+\hasPageBreak
+\item
+\tbw
+
+
+\end{enumerate}
+
+
+
+
+
+
+
+\hasPageBreak
+\section*{Problem 2}
+Ask Pengfei.
+
+
+
+\hasPageBreak
+\section*{Problem 3}
+\begin{enumerate}   [(a)]
+%\setcounter{enumi}{3}
+\item 
+\begin{enumerate}   [i]
+%\setcounter{enumi}{3}
+\item $w_h = 1$, $u_h = 1$, $b_h = 0$.
+\item $w_z = 1$, $u_z = 0$, $u_h = 1$, and then $w_h$ can be any number.
+\end{enumerate}
+
+
+
+
+
+
+
+\item
+\begin{enumerate}   [i]
+%\setcounter{enumi}{3}
+\item 
+We show that the parameter values that realizes this  behavior do not exist. 
+
+Suppose $h^{(t-1)} = 0$, then $x^{(t)} = 1$ must lead to $h^{(t)} = 1$ while $x^{(t)} = 0$ must lead to $h^{(t)} = 0$, thus
+\begin{eqnarray*}
+u_h + b_h &>& 0,
+\\
+b_h &\leq& 0,
+\end{eqnarray*}
+from which we know that $u_h > 0$. Now suppose $h^{(t-1)} = 1$, then $x^{(t)} = 1$ must lead to $h^{(t)} = 0$ while $x^{(t)} = 0$ must lead to $h^{(t)} = 1$, thus
+\begin{eqnarray*}
+u_h + w_h + b_h &\leq& 0,
+\\
+w_h + b_h &>& 0,
+\end{eqnarray*}
+from which we know that $u_h < 0$. Therefore, we must have $u_h > 0$ and $u_h < 0$, which is a contradiction.
+
+
+
+\item
+$b_r = 1$, $w_z = 1$, $u_z = -1$, $w_h = -1$, $u_h = 1$.
+\end{enumerate}
+
+
+
+
+
+
+\end{enumerate}
+
+
+
+
+
+\bibliographystyle{ormsv080}  % Need the file `` ormsv080.bst '' at the same folder.
+\bibliography{Bibli}  % Need the file ``Bibli.bib '' in the same folder.
+\end{document}
