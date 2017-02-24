@@ -223,9 +223,11 @@ class WindowModel(NERModel):
         ### YOUR CODE HERE (~10-20 lines)
         with tf.variable_scope('NER') as scope:
             W = tf.get_variable('W', [self.config.n_window_features * self.config.embed_size, self.config.hidden_size], initializer=tf.contrib.layers.xavier_initializer())
-            b1 = tf.get_variable('b1', [self.config.hidden_size,], initializer=tf.constant_initializer(0))
             U = tf.get_variable('U', [self.config.hidden_size, self.config.n_classes], initializer=tf.contrib.layers.xavier_initializer())
+            b1 = tf.get_variable('b1', [self.config.hidden_size,], initializer=tf.constant_initializer(0))  ## As is said on Piazza
             b2 = tf.get_variable('b2', [self.config.n_classes,], initializer=tf.constant_initializer(0))
+            # b1 = tf.get_variable('b1', [self.config.hidden_size,], initializer=tf.contrib.layers.xavier_initializer())
+            # b2 = tf.get_variable('b2', [self.config.n_classes,], initializer=tf.contrib.layers.xavier_initializer())
 
             h = tf.nn.relu(tf.matmul(x, W) + b1)
             h_drop = tf.nn.dropout(h, dropout_rate)
