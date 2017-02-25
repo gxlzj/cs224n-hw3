@@ -293,14 +293,26 @@ Compared to $(2w+1)D+(2w+1)DH+HC$ parameters for forward NN.
 \end{enumerate}
 
 \item code
-\item running code and report results
+\item running code and deliver results
 \item 
 \begin{enumerate}   [i]
-\item (This part needs observing the result first)  \\
- Limitation 1: \tbw \\
- Limitation 2: \tbw 
- \item Solution for 1: \tbw \\
- Solution for 2: \tbw
+\item
+ Limitation 1: RNN only conveys information from left to right. This means if a prediction needs information from the right side, RNN will fail. See the following prediction result.
+\begin{verbatim}
+ x : Estes , whose only win came at ...
+y*: PER   O O     O    O   O ...
+y': O     O O     O    O   O ...
+\end{verbatim}
+ Limitation 2: When sentences are too long, the previous information may get lost. See the following incorrect example. Elections are mentioned in the early sentence, but ``Clintons'' is not correctly classified. This may be caused by the information loss in RNN.
+ \begin{verbatim}
+ x : ... that could completely turn the election around are new findings in the 
+         Whitewater scandal that would damage the Clintons . 
+y*: ...O        O  O   LOC        O       O    O     O      O   PER      O 
+y': ...O        O  O   MISC       O       O    O     O      O   MISC     O 	
+ \end{verbatim}
+
+ \item Solution for 1: We can use bi-directed RNN which can convey information from both ways. \\
+Solution for 2: We can use gated version of RNN, like GRU or LSTM.
 \end{enumerate}
 
 \end{enumerate}
