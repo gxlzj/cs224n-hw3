@@ -110,12 +110,10 @@ def pad_sequences(data, max_length):
             filled_labels = labels + ( [zero_label] * add_length)
             mark = [True] * len_sentence
             mark.extend([False] * add_length)
-        elif add_length<0:
+        else:
             mark = [True] * max_length
             filled_sentence = sentence[:max_length]
             filled_labels = labels[:max_length]
-        else:
-            mark = [True] * len_sentence
 
         ret.append((filled_sentence, filled_labels, mark))
         ### END YOUR CODE ###
