@@ -171,17 +171,21 @@ Each member contributes equally, and names are put in alphabetic order.}
 \section*{Problem 1}
 \begin{enumerate}   [(a)]
 %\setcounter{enumi}{3}
-\item \tbw
+\item 
 \begin{enumerate}   [i]
 %\setcounter{enumi}{3}
 \item 
-J.P. Morgan could either be a PERor a ORG ; Stanford can either be a ORG or be a PER.
+Stanford just offered me a big fellowship. [Stanford here may mean an ORG (Stanford university) or a PER]
+
+Go Giant! [Giant may mean an ORG(SF Giant) or a PER (named Giant) or null (a huge creature)]
 
 \item
-Because sometimes we need contexts. For example, if you say George Stanford is a great man. Then Stanford is a PER. If you say Stanford University, then Stanford is a ORG.
+We may need context as an important information in inferring NER. For example, if you say George Stanford is a great man, then Stanford is a PER; if you say Stanford University, then Stanford is an ORG.
 
 \item 
-The first letter of that word is capital or not; There is no 'a','the' in front of that word
+The proceeding word of the target, e.g., if the proceeding word is `a`, `the' or `at', `in'.
+
+The first letter of that word is capital or not.
 
 \end{enumerate}
 
@@ -202,15 +206,55 @@ $\be \in \real{1 \times (2 w + 1) D}$, $W \in \real{(2 w + 1)D \times H}$, $U \i
 
 
 
+\item
+See my code submission as well as \texttt{window\_predictions.conll}.
+
+
+
 \hasPageBreak
 \item
-Finished! Need to compare with Junzi.
+\begin{enumerate}   [i]
+%\setcounter{enumi}{3}
+\item 
+The best development entity-level $F_1$ score is 0.84, and the corresponding confusion matrix is:
+
+\begin{figure}[htbp] %  figure placement: here, top, bottom, or page
+   \centering
+   \includegraphics[width=5.2in]{Q1_confusion.png} 
+   \caption{Token-level confusion matrix}
+   \label{Fig:Q1_confusion}
+\end{figure}
+
+According to the confusion matrix, it is easy to mistakenly predict a PER as a ORG, predict ORG as LOC, and predict LOC as ORG.
 
 
-
-\hasPageBreak
 \item
-\tbw
+One limitation is the prediction of the current word is not related with the prediction of the proceeding word (only related with the representation of the proceeding word). This will make mistakes like the following:
+
+\begin{figure}[htbp] %  figure placement: here, top, bottom, or page
+   \centering
+   \includegraphics[width=3.2in]{Q1_error1.png} 
+   \caption{Error1}
+   \label{Fig:Q1_error1}
+\end{figure}
+
+where it predict 's to O while the true label LOC follows from the label of the proceeding word ``Lord", which is LOC.
+
+
+Another limitation is window size can only be limited, i.e., one can only handle windows of moderate size, not of arbitrary length. By fixing a small size of window, one might loose some important context. Example is the following:
+\begin{figure}[htbp] %  figure placement: here, top, bottom, or page
+   \centering
+   \includegraphics[width=3.2in]{Q1_error2.png} 
+   \caption{Error2}
+   \label{Fig:Q1_error2}
+\end{figure}
+
+In predicting LENTINI, window of size 1 can only see 'S and MOVES, but the most important context in this sentence is SOCCER (from which we will know that LENTINI is the soccer player)
+
+
+
+\end{enumerate}
+
 
 
 \end{enumerate}
@@ -280,7 +324,7 @@ Compared to $(2w+1)D+(2w+1)DH+HC$ parameters for forward NN.
 
 
 
-
+\hasPageBreak
 \item
 \begin{enumerate}   [i]
 %\setcounter{enumi}{3}
@@ -308,10 +352,51 @@ $b_r = 1$, $w_z = 1$, $u_z = -1$, $w_h = -1$, $u_h = 1$.
 \end{enumerate}
 
 
+\item
+See my code submission
 
 
+\hasPageBreak
+\item Learning curves are as below:
+
+\begin{figure}[htbp] %  figure placement: here, top, bottom, or page
+   \centering
+\begin{minipage}{0.5\linewidth}\centering
+   \includegraphics[width=3.8in]{q3-noclip-rnn.png} 
+   \\{\footnotesize  RNN without clip  }
+\end{minipage}
+\begin{minipage}{0.49\linewidth}\centering
+   \includegraphics[width=3.8in]{q3-clip-rnn.png} 
+   \\{\footnotesize  RNN with clip  }
+\end{minipage}
+\begin{minipage}{0.5\linewidth}\centering
+   \includegraphics[width=3.8in]{q3-noclip-gru.png} 
+   \\{\footnotesize  GRU without clip  }
+\end{minipage}
+\begin{minipage}{0.49\linewidth}\centering
+   \includegraphics[width=3.8in]{q3-clip-gru.png} 
+   \\{\footnotesize  GRU with clip  }
+\end{minipage}
+\caption{Learning curves}
+\label{Fig:Q3d}
+\end{figure}
+
+\hasPageBreak
+\item
+\begin{enumerate}  [i]
+%\setcounter{enumi}{3}
+\item 
+RNN experiences vanishing gradients, and neither model experience exploding gradients. 
+The gradient clipping does not help.
 
 
+\item The GRU model works better. The reason is that GRU model does not experience vanishing gradient, thus any word in the sentence can provide information in back-propagation (parameter training).
+
+
+\end{enumerate}
+
+
+\item See code submission as well as \texttt{window\_predictions.conll}. 
 \end{enumerate}
 
 
