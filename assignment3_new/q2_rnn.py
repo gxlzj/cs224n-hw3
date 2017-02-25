@@ -154,7 +154,7 @@ class RNNModel(NERModel):
         """
         ### YOUR CODE HERE (~4-6 lines)
         self.input_placeholder = tf.placeholder(
-            tf.int32, shape = (None, self.max_length,Config.n_features), name = 'input')
+            tf.int32, shape = (None, self.max_length, Config.n_features), name = 'input')
         self.labels_placeholder = tf.placeholder(
             tf.int32, shape = (None, self.max_length), name = 'labels')
         self.mask_placeholder = tf.placeholder(
@@ -294,18 +294,18 @@ class RNNModel(NERModel):
         with tf.variable_scope("RNN"):
             for time_step in range(self.max_length):
                 ### YOUR CODE HERE (~6-10 lines)
-                if  time_step>0:
+                if time_step>0:
                     tf.get_variable_scope().reuse_variables()
                 _, state = cell( x[:,time_step, :], state, scope="RNN" )
-                state = tf.nn.dropout(state, dropout_rate)
-                output = tf.nn.dropout( tf.matmul(state,U) + b2, dropout_rate )
+                state_dropout = tf.nn.dropout(state, dropout_rate)
+                output = tf.matmul(state_dropout,U) + b2
                 preds.append(output)
                 ### END YOUR CODE
 
         # Make sure to reshape @preds here.
         ### YOUR CODE HERE (~2-4 lines)
         preds = tf.pack(preds)
-        preds = tf.reshape(preds, [-1, self.max_length, Config.n_classes] )
+        preds = tf.reshape(preds, [-1, self.max_length, self.config.n_classes] )
         ### END YOUR CODE
 
         assert preds.get_shape().as_list() == [None, self.max_length, self.config.n_classes], "predictions are not of the right shape. Expected {}, got {}".format([None, self.max_length, self.config.n_classes], preds.get_shape().as_list())
