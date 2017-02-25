@@ -145,8 +145,8 @@
 \usepackage{color}
 \newcommand{\tbw}{\bigskip \mbox{\color{red} {\df (TBW) }}\bigskip}
 
-%\newcommand{\hasPageBreak}{\newpage}
-\newcommand{\hasPageBreak}{}
+\newcommand{\hasPageBreak}{\newpage}
+%\newcommand{\hasPageBreak}{}
 
 
 % Added on Dec 8th, 2015: listings
@@ -281,19 +281,27 @@ Compared to $(2w+1)D+(2w+1)DH+HC$ parameters for forward NN.
 \item To calculate next state cost $O(H(H+D))$.Calculate softmax cost $O(HC)$. Therefore, total cost is $O(HT(H+D)+HC)$.
 \end{enumerate}
 
+\hasPageBreak
 \item
 \begin{enumerate}   [i]
 \item Since cross-entropy loss only has a effect on the true label's negative log-likelihood. For a single sample, the cross-entropy loss is equal to the negative log-likelihood of classifying it to be true label. The loss property is decreasing with a smaller and smaller gradient as p goes up. Suppose we have 99 correctly predicted samples of which the probability of classifying true label is 0.5001; 1 incorrectly predicted sample of which the probability of classifying correct label is 0.0001. If we tune our model parameter, we could make the incorrect sample to have a 0.4999 probability for true label while the 99 correct samples to have a 0.4999 probability as well. In this case, cross-entropy loss will drop tremendously but the F1 score actually drops to zero.
 \item First, precision and recall are discontinuous measures, which cannot be optimized by gradient methods. Second, the harmonic mean makes it hard to calculate gradient.
 \end{enumerate}
 \item code
+
+
+\hasPageBreak
 \item 
 \begin{enumerate}   [i]
 \item The loss and gradient after $t=T$ is uselessly added into total objective if there is no masking. Masking multiplies zero to these useless terms to make sure they have no effect.
 \end{enumerate}
 
 \item code
+
 \item running code and deliver results
+
+
+\hasPageBreak
 \item 
 \begin{enumerate}   [i]
 \item
