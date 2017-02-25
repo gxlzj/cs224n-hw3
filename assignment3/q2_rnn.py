@@ -285,9 +285,9 @@ class RNNModel(NERModel):
         # Define U and b2 as variables.
         # Initialize state as vector of zeros.
         ### YOUR CODE HERE (~4-6 lines)
-        with tf.variable_scope('Layer1', initializer=tf.contrib.layers.xavier_initializer()):
-            U = tf.get_variable('U', (Config.hidden_size, Config.n_classes) )
-            b2 = tf.get_variable('b2', (Config.n_classes) )
+        with tf.variable_scope('Layer1'):
+            U = tf.get_variable('U', (Config.hidden_size, Config.n_classes), initializer=tf.contrib.layers.xavier_initializer() )
+            b2 = tf.get_variable('b2', (Config.n_classes), initializer=tf.constant_initializer(0) )
 
         input_shape = tf.shape(x)
         state = tf.zeros( (input_shape[0], Config.hidden_size) )

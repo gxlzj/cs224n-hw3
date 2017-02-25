@@ -164,10 +164,17 @@ class WindowModel(NERModel):
             feed_dict: The feed dictionary mapping from placeholders to values.
         """
         ### YOUR CODE HERE (~5-10 lines)
-        if (labels_batch == None) :
-            feed_dict = {self.input_placeholder : inputs_batch, self.dropout_placeholder : dropout}
+        if labels_batch is None :
+            feed_dict = {
+                self.input_placeholder : inputs_batch,
+                self.dropout_placeholder : dropout
+            }
         else :
-            feed_dict = {self.input_placeholder : inputs_batch, self.labels_placeholder : labels_batch, self.dropout_placeholder : dropout}
+            feed_dict = {
+                self.input_placeholder : inputs_batch,
+                self.labels_placeholder : labels_batch,
+                self.dropout_placeholder : dropout
+            }
         ### END YOUR CODE
         return feed_dict
 
