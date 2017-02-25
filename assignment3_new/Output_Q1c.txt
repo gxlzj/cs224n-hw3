@@ -1,0 +1,282 @@
+DN0a22b96a:assignment3_new yinhao$ python q1_window.py train
+INFO:Loading training data...
+INFO:Done. Read 14041 sentences
+INFO:Loading dev data...
+INFO:Done. Read 3250 sentences
+INFO:Built dictionary for 10007 features.
+INFO:Initialized embeddings.
+INFO:Building model...
+INFO:took 1.49 seconds
+INFO:Epoch 1 out of 10
+q1_window.py:167: FutureWarning: comparison to `None` will result in an elementwise object comparison in the future.
+  if (labels_batch == None) :
+100/100 [==============================] - 3s - train loss: 0.3444      
+
+INFO:Evaluating on development data
+26/26 [==============================] - 0s     
+DEBUG:Token-level confusion matrix:
+go\gu   	PER     	ORG     	LOC     	MISC    	O       
+PER     	2730.00 	109.00  	88.00   	12.00   	210.00  
+ORG     	440.00  	984.00  	281.00  	101.00  	286.00  
+LOC     	158.00  	203.00  	1449.00 	112.00  	172.00  
+MISC    	137.00  	186.00  	110.00  	651.00  	184.00  
+O       	128.00  	138.00  	43.00   	31.00   	42419.00
+
+DEBUG:Token-level scores:
+label	acc  	prec 	rec  	f1   
+PER  	0.98 	0.76 	0.87 	0.81 
+ORG  	0.97 	0.61 	0.47 	0.53 
+LOC  	0.98 	0.74 	0.69 	0.71 
+MISC 	0.98 	0.72 	0.51 	0.60 
+O    	0.98 	0.98 	0.99 	0.99 
+micro	0.98 	0.94 	0.94 	0.94 
+macro	0.98 	0.76 	0.71 	0.73 
+not-O	0.98 	0.72 	0.68 	0.70 
+
+INFO:Entity level P/R/F1: 0.60/0.63/0.61
+INFO:New best score! Saving model in results/window/20170224_180435/model.weights
+
+INFO:Epoch 2 out of 10
+100/100 [==============================] - 5s - train loss: 0.1859      
+
+INFO:Evaluating on development data
+26/26 [==============================] - 1s     
+DEBUG:Token-level confusion matrix:
+go\gu   	PER     	ORG     	LOC     	MISC    	O       
+PER     	2833.00 	94.00   	68.00   	17.00   	137.00  
+ORG     	347.00  	1296.00 	149.00  	79.00   	221.00  
+LOC     	118.00  	219.00  	1553.00 	81.00   	123.00  
+MISC    	96.00   	193.00  	73.00   	754.00  	152.00  
+O       	84.00   	100.00  	20.00   	35.00   	42520.00
+
+DEBUG:Token-level scores:
+label	acc  	prec 	rec  	f1   
+PER  	0.98 	0.81 	0.90 	0.85 
+ORG  	0.97 	0.68 	0.62 	0.65 
+LOC  	0.98 	0.83 	0.74 	0.78 
+MISC 	0.99 	0.78 	0.59 	0.68 
+O    	0.98 	0.99 	0.99 	0.99 
+micro	0.98 	0.95 	0.95 	0.95 
+macro	0.98 	0.82 	0.77 	0.79 
+not-O	0.98 	0.78 	0.75 	0.77 
+
+INFO:Entity level P/R/F1: 0.67/0.71/0.69
+INFO:New best score! Saving model in results/window/20170224_180435/model.weights
+
+INFO:Epoch 3 out of 10
+100/100 [==============================] - 4s - train loss: 0.1465      
+
+INFO:Evaluating on development data
+26/26 [==============================] - 0s     
+DEBUG:Token-level confusion matrix:
+go\gu   	PER     	ORG     	LOC     	MISC    	O       
+PER     	2885.00 	72.00   	79.00   	15.00   	98.00   
+ORG     	261.00  	1434.00 	177.00  	43.00   	177.00  
+LOC     	91.00   	200.00  	1683.00 	33.00   	87.00   
+MISC    	82.00   	172.00  	82.00   	792.00  	140.00  
+O       	76.00   	86.00   	19.00   	35.00   	42543.00
+
+DEBUG:Token-level scores:
+label	acc  	prec 	rec  	f1   
+PER  	0.98 	0.85 	0.92 	0.88 
+ORG  	0.98 	0.73 	0.69 	0.71 
+LOC  	0.99 	0.82 	0.80 	0.81 
+MISC 	0.99 	0.86 	0.62 	0.72 
+O    	0.99 	0.99 	0.99 	0.99 
+micro	0.98 	0.96 	0.96 	0.96 
+macro	0.98 	0.85 	0.80 	0.82 
+not-O	0.98 	0.82 	0.79 	0.80 
+
+INFO:Entity level P/R/F1: 0.72/0.76/0.74
+INFO:New best score! Saving model in results/window/20170224_180435/model.weights
+
+INFO:Epoch 4 out of 10
+100/100 [==============================] - 4s - train loss: 0.1193      
+
+INFO:Evaluating on development data
+26/26 [==============================] - 0s     
+DEBUG:Token-level confusion matrix:
+go\gu   	PER     	ORG     	LOC     	MISC    	O       
+PER     	2900.00 	74.00   	68.00   	29.00   	78.00   
+ORG     	220.00  	1470.00 	150.00  	95.00   	157.00  
+LOC     	70.00   	167.00  	1731.00 	61.00   	65.00   
+MISC    	64.00   	98.00   	50.00   	939.00  	117.00  
+O       	62.00   	79.00   	19.00   	51.00   	42548.00
+
+DEBUG:Token-level scores:
+label	acc  	prec 	rec  	f1   
+PER  	0.99 	0.87 	0.92 	0.90 
+ORG  	0.98 	0.78 	0.70 	0.74 
+LOC  	0.99 	0.86 	0.83 	0.84 
+MISC 	0.99 	0.80 	0.74 	0.77 
+O    	0.99 	0.99 	1.00 	0.99 
+micro	0.99 	0.97 	0.97 	0.97 
+macro	0.99 	0.86 	0.84 	0.85 
+not-O	0.99 	0.84 	0.82 	0.83 
+
+INFO:Entity level P/R/F1: 0.74/0.79/0.76
+INFO:New best score! Saving model in results/window/20170224_180435/model.weights
+
+INFO:Epoch 5 out of 10
+100/100 [==============================] - 4s - train loss: 0.1002      
+
+INFO:Evaluating on development data
+26/26 [==============================] - 0s     
+DEBUG:Token-level confusion matrix:
+go\gu   	PER     	ORG     	LOC     	MISC    	O       
+PER     	2896.00 	81.00   	58.00   	24.00   	90.00   
+ORG     	159.00  	1595.00 	130.00  	68.00   	140.00  
+LOC     	50.00   	184.00  	1740.00 	52.00   	68.00   
+MISC    	57.00   	98.00   	46.00   	954.00  	113.00  
+O       	42.00   	67.00   	17.00   	43.00   	42590.00
+
+DEBUG:Token-level scores:
+label	acc  	prec 	rec  	f1   
+PER  	0.99 	0.90 	0.92 	0.91 
+ORG  	0.98 	0.79 	0.76 	0.77 
+LOC  	0.99 	0.87 	0.83 	0.85 
+MISC 	0.99 	0.84 	0.75 	0.79 
+O    	0.99 	0.99 	1.00 	0.99 
+micro	0.99 	0.97 	0.97 	0.97 
+macro	0.99 	0.88 	0.85 	0.86 
+not-O	0.99 	0.86 	0.84 	0.85 
+
+INFO:Entity level P/R/F1: 0.77/0.80/0.79
+INFO:New best score! Saving model in results/window/20170224_180435/model.weights
+
+INFO:Epoch 6 out of 10
+100/100 [==============================] - 4s - train loss: 0.0850      
+
+INFO:Evaluating on development data
+26/26 [==============================] - 0s     
+DEBUG:Token-level confusion matrix:
+go\gu   	PER     	ORG     	LOC     	MISC    	O       
+PER     	2951.00 	56.00   	44.00   	19.00   	79.00   
+ORG     	175.00  	1601.00 	117.00  	57.00   	142.00  
+LOC     	57.00   	127.00  	1810.00 	34.00   	66.00   
+MISC    	52.00   	82.00   	43.00   	972.00  	119.00  
+O       	46.00   	54.00   	15.00   	35.00   	42609.00
+
+DEBUG:Token-level scores:
+label	acc  	prec 	rec  	f1   
+PER  	0.99 	0.90 	0.94 	0.92 
+ORG  	0.98 	0.83 	0.77 	0.80 
+LOC  	0.99 	0.89 	0.86 	0.88 
+MISC 	0.99 	0.87 	0.77 	0.82 
+O    	0.99 	0.99 	1.00 	0.99 
+micro	0.99 	0.97 	0.97 	0.97 
+macro	0.99 	0.90 	0.87 	0.88 
+not-O	0.99 	0.88 	0.85 	0.87 
+
+INFO:Entity level P/R/F1: 0.80/0.83/0.81
+INFO:New best score! Saving model in results/window/20170224_180435/model.weights
+
+INFO:Epoch 7 out of 10
+100/100 [==============================] - 5s - train loss: 0.0735      
+
+INFO:Evaluating on development data
+26/26 [==============================] - 0s     
+DEBUG:Token-level confusion matrix:
+go\gu   	PER     	ORG     	LOC     	MISC    	O       
+PER     	2955.00 	46.00   	64.00   	24.00   	60.00   
+ORG     	153.00  	1627.00 	116.00  	64.00   	132.00  
+LOC     	49.00   	120.00  	1847.00 	25.00   	53.00   
+MISC    	45.00   	71.00   	39.00   	1000.00 	113.00  
+O       	42.00   	49.00   	18.00   	37.00   	42613.00
+
+DEBUG:Token-level scores:
+label	acc  	prec 	rec  	f1   
+PER  	0.99 	0.91 	0.94 	0.92 
+ORG  	0.99 	0.85 	0.78 	0.81 
+LOC  	0.99 	0.89 	0.88 	0.88 
+MISC 	0.99 	0.87 	0.79 	0.83 
+O    	0.99 	0.99 	1.00 	0.99 
+micro	0.99 	0.97 	0.97 	0.97 
+macro	0.99 	0.90 	0.88 	0.89 
+not-O	0.99 	0.89 	0.86 	0.87 
+
+INFO:Entity level P/R/F1: 0.81/0.84/0.82
+INFO:New best score! Saving model in results/window/20170224_180435/model.weights
+
+INFO:Epoch 8 out of 10
+100/100 [==============================] - 4s - train loss: 0.0643      
+
+INFO:Evaluating on development data
+26/26 [==============================] - 0s     
+DEBUG:Token-level confusion matrix:
+go\gu   	PER     	ORG     	LOC     	MISC    	O       
+PER     	2932.00 	62.00   	71.00   	27.00   	57.00   
+ORG     	137.00  	1645.00 	116.00  	69.00   	125.00  
+LOC     	45.00   	109.00  	1848.00 	41.00   	51.00   
+MISC    	44.00   	59.00   	32.00   	1025.00 	108.00  
+O       	40.00   	60.00   	17.00   	37.00   	42605.00
+
+DEBUG:Token-level scores:
+label	acc  	prec 	rec  	f1   
+PER  	0.99 	0.92 	0.93 	0.92 
+ORG  	0.99 	0.85 	0.79 	0.82 
+LOC  	0.99 	0.89 	0.88 	0.88 
+MISC 	0.99 	0.85 	0.81 	0.83 
+O    	0.99 	0.99 	1.00 	0.99 
+micro	0.99 	0.97 	0.97 	0.97 
+macro	0.99 	0.90 	0.88 	0.89 
+not-O	0.99 	0.89 	0.87 	0.88 
+
+INFO:Entity level P/R/F1: 0.81/0.84/0.82
+
+INFO:Epoch 9 out of 10
+100/100 [==============================] - 4s - train loss: 0.0573      
+
+INFO:Evaluating on development data
+26/26 [==============================] - 1s     
+DEBUG:Token-level confusion matrix:
+go\gu   	PER     	ORG     	LOC     	MISC    	O       
+PER     	2934.00 	33.00   	82.00   	23.00   	77.00   
+ORG     	139.00  	1626.00 	127.00  	60.00   	140.00  
+LOC     	41.00   	94.00   	1874.00 	31.00   	54.00   
+MISC    	42.00   	62.00   	42.00   	1008.00 	114.00  
+O       	31.00   	44.00   	19.00   	27.00   	42638.00
+
+DEBUG:Token-level scores:
+label	acc  	prec 	rec  	f1   
+PER  	0.99 	0.92 	0.93 	0.93 
+ORG  	0.99 	0.87 	0.78 	0.82 
+LOC  	0.99 	0.87 	0.89 	0.88 
+MISC 	0.99 	0.88 	0.79 	0.83 
+O    	0.99 	0.99 	1.00 	0.99 
+micro	0.99 	0.98 	0.98 	0.98 
+macro	0.99 	0.91 	0.88 	0.89 
+not-O	0.99 	0.89 	0.87 	0.88 
+
+INFO:Entity level P/R/F1: 0.82/0.84/0.83
+INFO:New best score! Saving model in results/window/20170224_180435/model.weights
+
+INFO:Epoch 10 out of 10
+100/100 [==============================] - 4s - train loss: 0.0520      
+
+INFO:Evaluating on development data
+26/26 [==============================] - 1s     
+DEBUG:Token-level confusion matrix:
+go\gu   	PER     	ORG     	LOC     	MISC    	O       
+PER     	2920.00 	57.00   	51.00   	21.00   	100.00  
+ORG     	122.00  	1677.00 	102.00  	53.00   	138.00  
+LOC     	34.00   	105.00  	1875.00 	29.00   	51.00   
+MISC    	40.00   	72.00   	27.00   	1018.00 	111.00  
+O       	30.00   	47.00   	12.00   	29.00   	42641.00
+
+DEBUG:Token-level scores:
+label	acc  	prec 	rec  	f1   
+PER  	0.99 	0.93 	0.93 	0.93 
+ORG  	0.99 	0.86 	0.80 	0.83 
+LOC  	0.99 	0.91 	0.90 	0.90 
+MISC 	0.99 	0.89 	0.80 	0.84 
+O    	0.99 	0.99 	1.00 	0.99 
+micro	0.99 	0.98 	0.98 	0.98 
+macro	0.99 	0.91 	0.88 	0.90 
+not-O	0.99 	0.90 	0.87 	0.89 
+
+INFO:Entity level P/R/F1: 0.83/0.85/0.84
+INFO:New best score! Saving model in results/window/20170224_180435/model.weights
+
+26/26 [==============================] - 1s     
+DN0a22b96a:assignment3_new yinhao$ 

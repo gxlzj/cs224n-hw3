@@ -150,12 +150,14 @@ class SequencePredictor(Model):
         grad = [e[0] for e in GradAndVar]
         variables = [e[1] for e in GradAndVar]
         if (self.config.clip_gradients) :
-            gradClipped, self.grad_norm = tf.clip_by_global_norm(grad, self.config.max_grad_norm)
+            gradClipped, _ = tf.clip_by_global_norm(grad, self.config.max_grad_norm)
+            self.grad_norm = tf.global_norm(gradClipped)
             GradAndVarClipped = zip(gradClipped, variables)
             train_op = optimizer.apply_gradients(GradAndVarClipped)
         else :
             self.grad_norm = tf.global_norm(grad)
             train_op = optimizer.apply_gradients(GradAndVar)
+        print self.grad_norm
         ### END YOUR CODE
 
         assert self.grad_norm is not None, "grad_norm was not set properly!"

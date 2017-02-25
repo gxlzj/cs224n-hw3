@@ -1,0 +1,91 @@
+Last login: Fri Feb 24 18:13:16 on ttys001
+DN0a22b96a:assignment3_new yinhao$ python q3_gru.py predict -c gru -g
+/usr/local/lib/python2.7/site-packages/matplotlib/__init__.py:1401: UserWarning:  This call to matplotlib.use() has no effect
+because the backend has already been chosen;
+matplotlib.use() must be called *before* pylab, matplotlib.pyplot,
+or matplotlib.backends is imported for the first time.
+
+  warnings.warn(_use_error_msg)
+INFO:Building model...
+INFO:took 6.67 seconds
+INFO:Epoch 1 out of 40
+100/100 [==============================] - 4s - train loss: 12.5142      
+INFO:Epoch 2 out of 40
+100/100 [==============================] - 4s - train loss: 12.5293      
+INFO:Epoch 3 out of 40
+100/100 [==============================] - 4s - train loss: 12.5116      
+INFO:Epoch 4 out of 40
+100/100 [==============================] - 4s - train loss: 12.5126      
+INFO:Epoch 5 out of 40
+100/100 [==============================] - 4s - train loss: 12.5170      
+INFO:Epoch 6 out of 40
+100/100 [==============================] - 4s - train loss: 12.5143      
+INFO:Epoch 7 out of 40
+100/100 [==============================] - 4s - train loss: 12.5077      
+INFO:Epoch 8 out of 40
+100/100 [==============================] - 4s - train loss: 12.5086      
+INFO:Epoch 9 out of 40
+100/100 [==============================] - 4s - train loss: 12.5078      
+INFO:Epoch 10 out of 40
+100/100 [==============================] - 4s - train loss: 12.4993      
+INFO:Epoch 11 out of 40
+100/100 [==============================] - 4s - train loss: 12.6052      
+INFO:Epoch 12 out of 40
+100/100 [==============================] - 4s - train loss: 12.5057      
+INFO:Epoch 13 out of 40
+100/100 [==============================] - 4s - train loss: 12.5046      
+INFO:Epoch 14 out of 40
+100/100 [==============================] - 4s - train loss: 12.4988      
+INFO:Epoch 15 out of 40
+100/100 [==============================] - 3s - train loss: 12.5032      
+INFO:Epoch 16 out of 40
+100/100 [==============================] - 4s - train loss: 12.5020      
+INFO:Epoch 17 out of 40
+100/100 [==============================] - 4s - train loss: 12.5024      
+INFO:Epoch 18 out of 40
+100/100 [==============================] - 4s - train loss: 12.5029      
+INFO:Epoch 19 out of 40
+100/100 [==============================] - 4s - train loss: 12.5039      
+INFO:Epoch 20 out of 40
+100/100 [==============================] - 4s - train loss: 13.0079      
+INFO:Epoch 21 out of 40
+100/100 [==============================] - 4s - train loss: 12.5095      
+INFO:Epoch 22 out of 40
+100/100 [==============================] - 4s - train loss: 12.4992      
+INFO:Epoch 23 out of 40
+100/100 [==============================] - 4s - train loss: 12.4993      
+INFO:Epoch 24 out of 40
+100/100 [==============================] - 4s - train loss: 12.5020      
+INFO:Epoch 25 out of 40
+100/100 [==============================] - 4s - train loss: 12.4998      
+INFO:Epoch 26 out of 40
+100/100 [==============================] - 4s - train loss: 12.4993      
+INFO:Epoch 27 out of 40
+100/100 [==============================] - 4s - train loss: 12.5007      
+INFO:Epoch 28 out of 40
+100/100 [==============================] - 4s - train loss: 12.5005      
+INFO:Epoch 29 out of 40
+100/100 [==============================] - 4s - train loss: 12.5010      
+INFO:Epoch 30 out of 40
+100/100 [==============================] - 4s - train loss: 12.5004      
+INFO:Epoch 31 out of 40
+100/100 [==============================] - 4s - train loss: 12.4992      
+INFO:Epoch 32 out of 40
+100/100 [==============================] - 4s - train loss: 12.5003      
+INFO:Epoch 33 out of 40
+100/100 [==============================] - 4s - train loss: 12.4991      
+INFO:Epoch 34 out of 40
+100/100 [==============================] - 4s - train loss: 12.5010      
+INFO:Epoch 35 out of 40
+100/100 [==============================] - 4s - train loss: 12.4999      
+INFO:Epoch 36 out of 40
+100/100 [==============================] - 4s - train loss: 12.5012      
+INFO:Epoch 37 out of 40
+100/100 [==============================] - 4s - train loss: 12.4985      
+INFO:Epoch 38 out of 40
+100/100 [==============================] - 4s - train loss: 12.5003      
+INFO:Epoch 39 out of 40
+100/100 [==============================] - 5s - train loss: 12.5002      
+INFO:Epoch 40 out of 40
+100/100 [==============================] - 4s - train loss: 12.4998      
+DN0a22b96a:assignment3_new yinhao$ 
